@@ -4,10 +4,10 @@ Goal of this project is to pick and place objects from a shell and place it to a
 ---
 [//]: # (Image References)
 
-[01-DH]: ./support-docs/images/01-DH.jpeg
-[02-WC-Orientation]: ./support-docs/images/02-WC-Orientation.jpeg
-[03-URDFvalues]: ./support-docs/images/03-URDFvalues.jpeg
-[04-WC-ForwardKinematics]: ./support-docs/images/04-WC-ForwardKinematics.jpeg
+[01-DH]: ./support-docs/images/01-DH.jpg
+[02-WC-Orientation]: ./support-docs/images/02-WC-Orientation.jpg
+[03-URDFvalues]: ./support-docs/images/03-URDFvalues.jpg
+[04-WC-ForwardKinematics]: ./support-docs/images/04-WC-ForwardKinematics.jpg
 [05-teeta1]: ./support-docs/images/05-teeta1.jpg
 [06-teeta2.1]: ./support-docs/images/06-teeta2.1.jpg
 [06-teeta2.1]: ./support-docs/images/06-teeta2.2.jpg
