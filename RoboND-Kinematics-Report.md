@@ -4,23 +4,23 @@ Goal of this project is to pick and place objects from a shell and place it to a
 ---
 [//]: # (Image References)
 
-[DH]: ./support-docs/images/01-DH.jpg
-[WCOrientation]: ./support-docs/images/02-WC-Orientation.jpg
-[URDFvalues]: ./support-docs/images/03-URDFvalues.jpg
-[WCForwardKinematics]: ./support-docs/images/04-WC-ForwardKinematics.jpg
-[teeta1]: ./support-docs/images/05-teeta1.jpg
-[teeta21]: ./support-docs/images/06-teeta2.1.jpg
-[teeta22]: ./support-docs/images/06-teeta2.2.jpg
-[teeta3]: ./support-docs/images/07-teeta3.jpg
-[R361]: ./support-docs/images/08-R3_6.1.jpg
-[R362]: ./support-docs/images/08-R3_6.2.jpg
-[R363]: ./support-docs/images/08-R3_6.3.jpg
-[R364]: ./support-docs/images/08-R3_6.4.jpg
-[R365]: ./support-docs/images/08-R3_6.5.jpg
-[R366]: ./support-docs/images/08-R3_6.6.jpg
-[theta4]: ./support-docs/images/09-theta4.jpg
-[theta5]: ./support-docs/images/10-theta5.jpg
-[theta6]: ./support-docs/images/11-theta6.jpg
+[DH]: ./support-docs/images/01-DH.JPEG
+[WCOrientation]: ./support-docs/images/02-WC-Orientation.JPG
+[URDFvalues]: ./support-docs/images/03-URDFvalues.JPG
+[WCForwardKinematics]: ./support-docs/images/04-WC-ForwardKinematics.JPG
+[teeta1]: ./support-docs/images/05-teeta1.JPG
+[teeta21]: ./support-docs/images/06-teeta2.1.JPG
+[teeta22]: ./support-docs/images/06-teeta2.2.JPG
+[teeta3]: ./support-docs/images/07-teeta3.JPG
+[R361]: ./support-docs/images/08-R3_6.1.JPG
+[R362]: ./support-docs/images/08-R3_6.2.JPG
+[R363]: ./support-docs/images/08-R3_6.3.JPG
+[R364]: ./support-docs/images/08-R3_6.4.JPG
+[R365]: ./support-docs/images/08-R3_6.5.JPG
+[R366]: ./support-docs/images/08-R3_6.6.JPG
+[theta4]: ./support-docs/images/09-theta4.JPG
+[theta5]: ./support-docs/images/10-theta5.JPG
+[theta6]: ./support-docs/images/11-theta6.JPG
 
 **Summary of steps to complete the project:**  
 
