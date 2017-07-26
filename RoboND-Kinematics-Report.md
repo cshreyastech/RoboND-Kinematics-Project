@@ -37,9 +37,11 @@ Goal of this project is to pick and place objects from a shell and place it to a
 #### 1. Calculate DH parameters
 DH parameters are calculated using the values provided in urdf file of kuka arm. 
 Below is the orientation of the the axis for the the various joints
+
 ![alt text][DH]
 
 Values from URDF file of the arm
+
 ![alt text][WCOrientation]
 
 DH parameters values from derived from URDF file
@@ -105,8 +107,11 @@ As discribed in the lessons these angles will have to calculated using geometry.
 theta1 = atan2(WC[1], WC[0]).evalf()
 
 ##### theta2 calculations
+
 ![alt text][teeta21]
+
 ![alt text][teeta22]
+
 s1 = sqrt(WC[0]**2 + WC[1]**2) - s[a1]
 s2 = WC[2] - s[d1]
 s3 = sqrt(s1**2 + s2**2)
@@ -121,7 +126,9 @@ beeta2 = atan2(sin_beeta2, cos_beeta2)
 theta2 = (pi/2 - beeta1 - beeta2).evalf()
 
 ##### theta3 calculations
+
 ![alt text][teeta3]
+
 cos_beeta3 = (s[a2]**2 + s4**2 - s3**2)/(2*s[a2]*s4)
 sin_beeta3 = sqrt(1 - cos_beeta3**2)
 beeta3 = atan2(sin_beeta3, cos_beeta3)
@@ -139,11 +146,17 @@ R3_6 = inv(R0_3) * Rrpy
 
 ##### R3_6 Calculations
 R3_6 = R3_4 * R4_5 * R5_6
+
 ![alt text][R361]
+
 ![alt text][R362]
+
 ![alt text][R363]
+
 ![alt text][R364]
+
 ![alt text][R365]
+
 ![alt text][R366]
 
 R0_3 is the rotation part of T0_3
@@ -153,15 +166,21 @@ R3_6 = R0_3_inv * R0_6
 R3_6_num = R3_6.evalf(subs={q1: theta1, q2: theta2, q3: theta3})
 
 ##### theta4 calculations
+
 ![alt text][theta4]
+
 theta4 = atan2(R3_6_num[2, 2], -R3_6_num[0, 2]).evalf()
 
 ##### theta5 calculations
+
 ![alt text][theta5]
+
 theta5 = atan2(sqrt(1 - R3_6_num[1, 2]**2), R3_6_num[1, 2]).evalf()
 
 ##### theta6 calculations
+
 ![alt text][theta6]
+
 theta6 = atan2(-R3_6_num[1, 1], R3_6_num[1, 0]).evalf()
 
 ----
