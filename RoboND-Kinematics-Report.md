@@ -8,19 +8,19 @@ Goal of this project is to pick and place objects from a shell and place it to a
 [02-WC-Orientation]: ./support-docs/images/02-WC-Orientation.jpeg
 [03-URDFvalues]: ./support-docs/images/03-URDFvalues.jpeg
 [04-WC-ForwardKinematics]: ./support-docs/images/04-WC-ForwardKinematics.jpeg
-[05-teeta1]: ./support-docs/images/05-teeta1.jpeg
-[06-teeta2.1]: ./support-docs/images/06-teeta2.1.jpeg
-[06-teeta2.1]: ./support-docs/images/06-teeta2.2.jpeg
-[07-teeta3]: ./support-docs/images/07-teeta3.jpeg
-[08-R3_6.1]: ./support-docs/images/08-R3_6.1.jpeg
-[08-R3_6.2]: ./support-docs/images/08-R3_6.2.jpeg
-[08-R3_6.3]: ./support-docs/images/08-R3_6.3.jpeg
-[08-R3_6.4]: ./support-docs/images/08-R3_6.4.jpeg
-[08-R3_6.5]: ./support-docs/images/08-R3_6.5.jpeg
-[08-R3_6.6]: ./support-docs/images/08-R3_6.6.jpeg
-[09-theta4]: ./support-docs/images/09-theta4.jpeg
-[10-theta5]: ./support-docs/images/10-theta5.jpeg
-[11-theta6]: ./support-docs/images/11-theta6.jpeg
+[05-teeta1]: ./support-docs/images/05-teeta1.jpg
+[06-teeta2.1]: ./support-docs/images/06-teeta2.1.jpg
+[06-teeta2.1]: ./support-docs/images/06-teeta2.2.jpg
+[07-teeta3]: ./support-docs/images/07-teeta3.jpg
+[08-R3_6.1]: ./support-docs/images/08-R3_6.1.jpg
+[08-R3_6.2]: ./support-docs/images/08-R3_6.2.jpg
+[08-R3_6.3]: ./support-docs/images/08-R3_6.3.jpg
+[08-R3_6.4]: ./support-docs/images/08-R3_6.4.jpg
+[08-R3_6.5]: ./support-docs/images/08-R3_6.5.jpg
+[08-R3_6.6]: ./support-docs/images/08-R3_6.6.jpg
+[09-theta4]: ./support-docs/images/09-theta4.jpg
+[10-theta5]: ./support-docs/images/10-theta5.jpg
+[11-theta6]: ./support-docs/images/11-theta6.jpg
 
 **Summary of steps to complete the project:**  
 
@@ -98,7 +98,7 @@ P_EE = Matrix([px, py, pz])
 WC = P_EE - R0_6 * Matrix([0, 0, s[d7]])
 
 ---
-####5. Calculate theta1 through theta3
+#### 5. Calculate theta1 through theta3
 As discribed in the lessons these angles will have to calculated using geometry.
 ##### theta1 calculations
 ![alt text][05-teeta1]
@@ -133,7 +133,7 @@ theta1_3_end = datetime.datetime.now()
 theta1_3_delta = theta1_3_end - theta1_3_start
 
 ----
-####6. Calculate theta4 through theta6
+#### 6. Calculate theta4 through theta6
 From the leassons, theta4 through theta were calculated using R3_6
 R3_6 = inv(R0_3) * Rrpy
 
@@ -165,4 +165,4 @@ theta5 = atan2(sqrt(1 - R3_6_num[1, 2]**2), R3_6_num[1, 2]).evalf()
 theta6 = atan2(-R3_6_num[1, 1], R3_6_num[1, 0]).evalf()
 
 ----
-####7. Conclusion
+#### 7. Conclusion
