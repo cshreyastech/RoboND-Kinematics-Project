@@ -37,7 +37,7 @@ Goal of this project is to pick and place objects from a shell and place it to a
 #### 1. Calculate DH parameters
 DH parameters are calculated using the values provided in urdf file of kuka arm. 
 Below is the orientation of the the axis for the the various joints
-![Alt text](/support-docs/images/01-DH.jpg?raw=true "Title")
+![Alt text](support-docs/images/01-DH.jpg?raw=true "Title")
 
 Values from URDF file of the arm
 ![alt text][02-WC-Orientation]
