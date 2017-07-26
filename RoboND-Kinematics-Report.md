@@ -10,8 +10,8 @@ Goal of this project is to pick and place objects from a shell and place it to a
 [WCForwardKinematics]: ./support-docs/images/04-WC-ForwardKinematics.JPG
 [teeta1]: ./support-docs/images/05-teeta1.JPG
 [teeta21]: ./support-docs/images/06-teeta2.1.JPG
-[teeta22]: ./support-docs/images/06-teeta2.2.JPG
-[teeta3]: ./support-docs/images/07-teeta3.JPG
+[teeta22]: ./support-docs/images/06-teeta2.2.jpg
+[teeta3]: ./support-docs/images/07-teeta3.jpg
 [R361]: ./support-docs/images/08-R3_6.1.JPG
 [R362]: ./support-docs/images/08-R3_6.2.JPG
 [R363]: ./support-docs/images/08-R3_6.3.JPG
