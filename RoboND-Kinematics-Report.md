@@ -205,10 +205,8 @@ theta6 = atan2(-R3_6_num[1, 1], R3_6_num[1, 0]).evalf()
 Gripper could successfully pick and place 9 out of 10 objects from the shelf and the calculations works. The project successfully satisfies the requirements.
 There are few scope of improvements in the project.
 
-Markup : ```javascript
-         ```
-Markup : 1. One of the object was not properly dropped at the destination, this was due to imaginary numbers in the theta values. This was due to taking square root of a negative number in the calculation.
-		 2. Wrist rotates 360 degrees multiple times which is needless.
+- One of the object was not properly dropped at the destination, this was due to imaginary numbers in the theta values. This was due to taking square root of a negative number in the calculation.
+- Wrist rotates 360 degrees multiple times which is needless.
 
 Just a note : Added Start and End timmer in the code to identify the performance of the code. Performance of the code impoved 10x after minimizing simplify() from the code. 
 		 
