@@ -44,8 +44,7 @@ Below are the orientations of the axis of the joints
 Values from URDF file of the arm relative to previous joint
 Note that the orientation of the gripper has been corrected to match reference frame.
 
-![alt text][WCOrientation]
-
+![alt text][URDFvalues]
 
 Joint			| Parent Line	| Child Link	| x(m)	| y(m) 	| z(m)
 --- 			| --- 			| --- 			| ---	| ---	| ---
@@ -68,6 +67,9 @@ Joint	| alpha	|	a	|  d	|  q
 5 		| pi/2 	|   0  	| 0		|
 6 		| -pi/2 |   0  	| 0		|
 7 		|   0  	|   0  	| 0.303	| 0
+
+Wrist Orientation for a randome pose
+![alt text][WCOrientation]
 
 ---
 #### 2. Transformation Matrix with reference to previous joint
@@ -118,6 +120,7 @@ As described in the lessons these angles were calculated using geometry.
 
 ##### theta1 calculations
 ![alt text][teeta1]
+
 theta1 = atan2(WC[1], WC[0]).evalf()
 
 ##### theta2 calculations
