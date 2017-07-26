@@ -4,13 +4,13 @@ Goal of this project is to pick and place objects from a shell and place it to a
 ---
 [//]: # (Image References)
 
-[01-DH]: /support-docs/images/01-DH.jpg
-[02-WC-Orientation]: /support-docs/images/02-WC-Orientation.jpg
-[03-URDFvalues]: /support-docs/images/03-URDFvalues.jpg
-[04-WC-ForwardKinematics]: /support-docs/images/04-WC-ForwardKinematics.jpg
-[05-teeta1]: /support-docs/images/05-teeta1.jpg
-[06-teeta2.1]: /support-docs/images/06-teeta2.1.jpg
-[06-teeta2.1]: /support-docs/images/06-teeta2.2.jpg
+[01-DH]: ./support-docs/images/01-DH.jpg
+[02-WC-Orientation]: ./support-docs/images/02-WC-Orientation.jpg
+[03-URDFvalues]: ./support-docs/images/03-URDFvalues.jpg
+[04-WC-ForwardKinematics]: ./support-docs/images/04-WC-ForwardKinematics.jpg
+[05-teeta1]: ./support-docs/images/05-teeta1.jpg
+[06-teeta2.1]: ./support-docs/images/06-teeta2.1.jpg
+[06-teeta2.1]: ./support-docs/images/06-teeta2.2.jpg
 [07-teeta3]: ./support-docs/images/07-teeta3.jpg
 [08-R3_6.1]: ./support-docs/images/08-R3_6.1.jpg
 [08-R3_6.2]: ./support-docs/images/08-R3_6.2.jpg
@@ -37,7 +37,7 @@ Goal of this project is to pick and place objects from a shell and place it to a
 #### 1. Calculate DH parameters
 DH parameters are calculated using the values provided in urdf file of kuka arm. 
 Below is the orientation of the the axis for the the various joints
-![Alt text](support-docs/images/01-DH.jpg?raw=true "Title")
+![alt text][01-DH]
 
 Values from URDF file of the arm
 ![alt text][02-WC-Orientation]
