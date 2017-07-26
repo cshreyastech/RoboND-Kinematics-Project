@@ -4,7 +4,7 @@ Goal of this project is to pick and place objects from a shell and place it to a
 ---
 [//]: # (Image References)
 
-[DH]: ./support-docs/images/01-DH.JPEG
+[DH]: ./support-docs/images/01-DH.JPG
 [WCOrientation]: ./support-docs/images/02-WC-Orientation.JPG
 [URDFvalues]: ./support-docs/images/03-URDFvalues.JPG
 [WCForwardKinematics]: ./support-docs/images/04-WC-ForwardKinematics.JPG
