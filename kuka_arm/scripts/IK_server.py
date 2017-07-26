@@ -162,13 +162,16 @@ def handle_calculate_IK(req):
 	    R0_6 = R_roll * R_pitch * R_yaw * R_corr
 
             # Calculate WC - Wrist Center
-            P_EE = Matrix([px, py, pz])
-	    WC = P_EE - R0_6 * Matrix([0, 0, s[d7]])
+	    # Wrist Center is d7 distance away from End Effector
+            P = Matrix([px, py, pz])
+	    WC = P - R0_6 * Matrix([0, 0, s[d7]])
 
 	    WC_end = datetime.datetime.now()
 	    WC_delta = WC_end - WC_start
 
 	    theta1_3_start = datetime.datetime.now()
+
+	    # theta1, theta2 and theta3 are are calculated using geometry.
             # Calculate theta1
             theta1 = atan2(WC[1], WC[0]).evalf()
 
@@ -200,6 +203,7 @@ def handle_calculate_IK(req):
             # Calculate theta4, 5, 6:
 	    theta4_6_start = datetime.datetime.now()
 
+	    # Refering to the leassons
 	    R3_6 = R0_3_inv * R0_6
 	    R3_6_num = R3_6.evalf(subs={q1: theta1, q2: theta2, q3: theta3})
 

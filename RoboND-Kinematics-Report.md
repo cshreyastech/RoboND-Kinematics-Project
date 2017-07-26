@@ -21,12 +21,13 @@ Goal of this project is to pick and place objects from a shell and place it to a
 [theta4]: ./support-docs/images/09-theta4.JPG
 [theta5]: ./support-docs/images/10-theta5.JPG
 [theta6]: ./support-docs/images/11-theta6.JPG
+[Result]: ./support-docs/images/12-Result.JPG
 
 **Summary of steps to complete the project:**  
 
 1. DH parameters
-2. Transformation Matrix with respespect to previous joint
-3. Transformation Matrix with respespect to base frame
+2. Transformation Matrix with reference to previous joint
+3. Transformation Matrix with reference to base frame
 4. Calculate Wrist Center
 5. Calculate theta1 through theta3
 6. Calculate theta4 through theta6
@@ -36,13 +37,25 @@ Goal of this project is to pick and place objects from a shell and place it to a
 ### Detail Explanations
 #### 1. Calculate DH parameters
 DH parameters are calculated using the values provided in urdf file of kuka arm. 
-Below is the orientation of the the axis for the the various joints
+Below are the orientations of the axis of the joints
 
 ![alt text][DH]
 
-Values from URDF file of the arm
+Values from URDF file of the arm relative to previous joint
+Note that the orientation of the gripper has been corrected to match reference frame.
 
 ![alt text][WCOrientation]
+
+
+Joint			| Parent Line	| Child Link	| x(m)	| y(m) 	| z(m)
+--- 			| --- 			| --- 			| ---	| ---	| ---
+joint1 			| base link 	|  link 1		| 0		|  0	| 0.33
+joint2 			| link 1 		|  link 2 		| 0.35	|  0	| 0.42
+joint3 			| link 2 		|  link 3		| 0		|  0	| 1.25
+joint4 			| link 3		|  link 4 		| 0.96	|  0	|-0.054
+joint5 			| link 4		|  link 5  		| 0.54	|  0	| 0
+joint6 			| link 5		|  link 6		| 0.193	|  0	| 0
+joint-gripper 	| link 6		|  link gripper	| 0.11	|  0	| 0
 
 DH parameters values from derived from URDF file
 
@@ -57,7 +70,7 @@ Joint	| alpha	|	a	|  d	|  q
 7 		|   0  	|   0  	| 0.303	| 0
 
 ---
-#### 2. Transformation Matrix with respespect to previous joint
+#### 2. Transformation Matrix with reference to previous joint
 T0_1 = Matrix([[             cos(q1),            -sin(q1),            0,              a0 ],
                [ sin(q1)*cos(alpha0), cos(q1)*cos(alpha0), -sin(alpha0), -sin(alpha0)*d1 ],
                [ sin(q1)*sin(alpha0), cos(q1)*sin(alpha0),  cos(alpha0),  cos(alpha0)*d1 ],
@@ -74,7 +87,7 @@ T5_6
 T6_G
 
 ---
-#### 3. Transformation Matrix with respespect to base frame
+#### 3. Transformation Matrix with resference to base frame
 As a need a for common frame of reference for further calculations, Transformation matrix with respect to base frame was calculated
 T0_2 = T0_1 * T1_2
 T0_3 = T0_2 * T2_3
@@ -83,7 +96,7 @@ T0_5 = T0_4 * T4_5
 T0_6 = T0_5 * T5_6
 T0_G = T0_6 * T6_G
 
-The gripper orientation is different to that of base frame. To account for this the correction matrix is multipled with the end effector roll, pitch and yaw values.
+The gripper orientation is different to that of base frame. To account for this the correction matrix is multiplied with the end effector roll, pitch and yaw values.
 R_z = rot_z(pi)
 R_y = rot_y(-pi/2)
 R_corr = R_z * R_y
@@ -101,7 +114,8 @@ WC = P_EE - R0_6 * Matrix([0, 0, s[d7]])
 
 ---
 #### 5. Calculate theta1 through theta3
-As discribed in the lessons these angles will have to calculated using geometry.
+As described in the lessons these angles were calculated using geometry.
+
 ##### theta1 calculations
 ![alt text][teeta1]
 theta1 = atan2(WC[1], WC[0]).evalf()
@@ -185,3 +199,13 @@ theta6 = atan2(-R3_6_num[1, 1], R3_6_num[1, 0]).evalf()
 
 ----
 #### 7. Conclusion
+Gripper could successfully pick and place 9 out of 10 objects from the shelf and the calculations works. The project successfully satisfies the requirements.
+There are few scope of improvements in the project.
+
+Markup : 1. One of the object was not properly dropped at the destination, this was due to imaginary numbers in the theta values. This was due to taking square root of a negative number in the calculation.
+		 2. Wrist rotates 360 degrees multiple times which is needless.
+
+Just a note : Added Start and End timmer in the code to identify the performance of the code. Performance of the code impoved 10x after minimizing simplify() from the code. 
+		 
+![alt text][Result]
+		 
