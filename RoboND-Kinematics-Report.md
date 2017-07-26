@@ -4,23 +4,23 @@ Goal of this project is to pick and place objects from a shell and place it to a
 ---
 [//]: # (Image References)
 
-[01-DH]: ./support-docs/images/01-DH.jpg
-[02-WC-Orientation]: ./support-docs/images/02-WC-Orientation.jpg
-[03-URDFvalues]: ./support-docs/images/03-URDFvalues.jpg
-[04-WC-ForwardKinematics]: ./support-docs/images/04-WC-ForwardKinematics.jpg
-[05-teeta1]: ./support-docs/images/05-teeta1.jpg
-[06-teeta2.1]: ./support-docs/images/06-teeta2.1.jpg
-[06-teeta2.1]: ./support-docs/images/06-teeta2.2.jpg
-[07-teeta3]: ./support-docs/images/07-teeta3.jpg
-[08-R3_6.1]: ./support-docs/images/08-R3_6.1.jpg
-[08-R3_6.2]: ./support-docs/images/08-R3_6.2.jpg
-[08-R3_6.3]: ./support-docs/images/08-R3_6.3.jpg
-[08-R3_6.4]: ./support-docs/images/08-R3_6.4.jpg
-[08-R3_6.5]: ./support-docs/images/08-R3_6.5.jpg
-[08-R3_6.6]: ./support-docs/images/08-R3_6.6.jpg
-[09-theta4]: ./support-docs/images/09-theta4.jpg
-[10-theta5]: ./support-docs/images/10-theta5.jpg
-[11-theta6]: ./support-docs/images/11-theta6.jpg
+[DH]: ./support-docs/images/01-DH.jpg
+[WCOrientation]: ./support-docs/images/02-WC-Orientation.jpg
+[URDFvalues]: ./support-docs/images/03-URDFvalues.jpg
+[WCForwardKinematics]: ./support-docs/images/04-WC-ForwardKinematics.jpg
+[teeta1]: ./support-docs/images/05-teeta1.jpg
+[teeta21]: ./support-docs/images/06-teeta2.1.jpg
+[teeta22]: ./support-docs/images/06-teeta2.2.jpg
+[teeta3]: ./support-docs/images/07-teeta3.jpg
+[R361]: ./support-docs/images/08-R3_6.1.jpg
+[R362]: ./support-docs/images/08-R3_6.2.jpg
+[R363]: ./support-docs/images/08-R3_6.3.jpg
+[R364]: ./support-docs/images/08-R3_6.4.jpg
+[R365]: ./support-docs/images/08-R3_6.5.jpg
+[R366]: ./support-docs/images/08-R3_6.6.jpg
+[theta4]: ./support-docs/images/09-theta4.jpg
+[theta5]: ./support-docs/images/10-theta5.jpg
+[theta6]: ./support-docs/images/11-theta6.jpg
 
 **Summary of steps to complete the project:**  
 
@@ -37,10 +37,10 @@ Goal of this project is to pick and place objects from a shell and place it to a
 #### 1. Calculate DH parameters
 DH parameters are calculated using the values provided in urdf file of kuka arm. 
 Below is the orientation of the the axis for the the various joints
-![alt text][01-DH]
+![alt text][DH]
 
 Values from URDF file of the arm
-![alt text][02-WC-Orientation]
+![alt text][WCOrientation]
 
 DH parameters values from derived from URDF file
 
@@ -101,12 +101,12 @@ WC = P_EE - R0_6 * Matrix([0, 0, s[d7]])
 #### 5. Calculate theta1 through theta3
 As discribed in the lessons these angles will have to calculated using geometry.
 ##### theta1 calculations
-![alt text][05-teeta1]
+![alt text][teeta1]
 theta1 = atan2(WC[1], WC[0]).evalf()
 
 ##### theta2 calculations
-![alt text][06-teeta2.1]
-![alt text][06-teeta2.2]
+![alt text][teeta21]
+![alt text][teeta22]
 s1 = sqrt(WC[0]**2 + WC[1]**2) - s[a1]
 s2 = WC[2] - s[d1]
 s3 = sqrt(s1**2 + s2**2)
@@ -121,7 +121,7 @@ beeta2 = atan2(sin_beeta2, cos_beeta2)
 theta2 = (pi/2 - beeta1 - beeta2).evalf()
 
 ##### theta3 calculations
-![alt text][07-teeta3]
+![alt text][teeta3]
 cos_beeta3 = (s[a2]**2 + s4**2 - s3**2)/(2*s[a2]*s4)
 sin_beeta3 = sqrt(1 - cos_beeta3**2)
 beeta3 = atan2(sin_beeta3, cos_beeta3)
@@ -139,12 +139,12 @@ R3_6 = inv(R0_3) * Rrpy
 
 ##### R3_6 Calculations
 R3_6 = R3_4 * R4_5 * R5_6
-![alt text][08-R3_6.1]
-![alt text][08-R3_6.2]
-![alt text][08-R3_6.3]
-![alt text][08-R3_6.4]
-![alt text][08-R3_6.5]
-![alt text][08-R3_6.6]
+![alt text][R361]
+![alt text][R362]
+![alt text][R363]
+![alt text][R364]
+![alt text][R365]
+![alt text][R366]
 
 R0_3 is the rotation part of T0_3
 R0_3 = T0_3[0:3, 0:3]
@@ -153,15 +153,15 @@ R3_6 = R0_3_inv * R0_6
 R3_6_num = R3_6.evalf(subs={q1: theta1, q2: theta2, q3: theta3})
 
 ##### theta4 calculations
-![alt text][09-theta4]
+![alt text][theta4]
 theta4 = atan2(R3_6_num[2, 2], -R3_6_num[0, 2]).evalf()
 
 ##### theta5 calculations
-![alt text][10-theta5]
+![alt text][theta5]
 theta5 = atan2(sqrt(1 - R3_6_num[1, 2]**2), R3_6_num[1, 2]).evalf()
 
 ##### theta6 calculations
-![alt text][11-theta6]
+![alt text][theta6]
 theta6 = atan2(-R3_6_num[1, 1], R3_6_num[1, 0]).evalf()
 
 ----
